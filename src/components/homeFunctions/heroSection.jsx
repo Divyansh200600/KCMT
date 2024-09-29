@@ -85,7 +85,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative w-full h-screen overflow-hidden">
+    <div className="relative w-full  overflow-hidden">
       <Slider {...settings} ref={sliderRef}>
         {images.map((img, index) => (
           <div
