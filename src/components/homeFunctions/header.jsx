@@ -70,7 +70,7 @@ const Header = () => {
                                 ))}
                             </span>
                         </div>
-                        <div className="text-sm md:text-lg text-gray-700">Institution of Braeilly</div>
+                        <div className="text-sm md:text-lg text-gray-700">of Institutions, Braeilly</div>
                         <div className="bg-lime-500 text-white p-2 md:p-4 rounded-md shadow-lg">
                             <div className="text-sm md:text-lg font-semibold">Top Education Brand Of Northern India</div>
                         </div>

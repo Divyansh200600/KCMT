@@ -3,7 +3,8 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import Header from '../../components/homeFunctions/header'; 
 import { FaWhatsapp, FaFacebookF, FaInstagram, FaTwitter, FaLinkedin ,FaYoutube} from 'react-icons/fa';
 import NoticeBoard from '../../components/noticeBoard/notice';
-
+import HeroSection from '../../components/homeFunctions/heroSection';
+import SearchCourse from '../../components/homeFunctions/searchCourse';
 const Home = () => {
     const [showSocialIcons, setShowSocialIcons] = useState(false);
     const navigate = useNavigate();
@@ -19,6 +20,9 @@ const Home = () => {
     return (
         <div className="relative">
             <Header />
+            <HeroSection/>
+            <SearchCourse/>
+
 
             {/* Floating WhatsApp Icon */}
             <a
