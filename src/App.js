@@ -1,8 +1,16 @@
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/home/home'; // Home page component
+import AdminLogin from './pages/adminLogin/adminLogin'; // Admin Login page component
+import './App.css';
 function App() {
   return (
-    <div className="text-center bg-blue-500 text-white p-10">
-      <h1 className="text-4xl font-bold">Hello, Tailwind in React!</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+      </Routes>
+    </Router>
   );
 }
 
