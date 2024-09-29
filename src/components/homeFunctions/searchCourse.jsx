@@ -27,27 +27,20 @@ const CourseSearch = () => {
   const availableCourses = courses[selectedType] || [];
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center', backgroundColor: '#f2f2f2', padding: '20px', borderRadius: '8px', boxShadow: '0px 4px 8px rgba(0,0,0,0.1)' }}>
-      <div style={{ backgroundColor: '#007bff', color: 'white', padding: '30px', textAlign: 'center', borderRadius: '8px' }}>
-        <h2 style={{ margin: 0, fontSize: '18px' }}>SEARCH FOR</h2>
-        <h1 style={{ margin: 0, fontSize: '24px', color: '#ffd700' }}>COURSE</h1>
+    <div style={styles.container}>
+      <div style={styles.header}>
+        <h2 style={styles.headerTitle}>SEARCH FOR</h2>
+        <h1 style={styles.headerSubtitle}>COURSE</h1>
       </div>
 
-      <div style={{ flex: 1, padding: '20px', marginLeft: '20px' }}>
-        {/* Both selectors displayed in a row */}
-        <div style={{ display: 'flex', gap: '20px' }}>
+      <div style={styles.form}>
+        {/* Both selectors displayed in a row for larger screens */}
+        <div style={styles.selectContainer}>
           {/* Course Type Selector */}
-          <div style={{ flex: 1 }}>
-            <label style={{ display: 'block', marginBottom: '5px', fontSize: '16px', fontWeight: 'bold' }}>Select Course Type:</label>
+          <div style={styles.selectWrapper}>
+            <label style={styles.label}>Select Course Type:</label>
             <select
-              style={{
-                width: '100%',
-                padding: '10px',
-                fontSize: '16px',
-                borderRadius: '4px',
-                border: '1px solid #ccc',
-                outline: 'none',
-              }}
+              style={styles.select}
               value={selectedType}
               onChange={handleTypeChange}
             >
@@ -59,17 +52,10 @@ const CourseSearch = () => {
           </div>
 
           {/* Course Name Selector */}
-          <div style={{ flex: 1 }}>
-            <label style={{ display: 'block', marginBottom: '5px', fontSize: '16px', fontWeight: 'bold' }}>Select Course Name:</label>
+          <div style={styles.selectWrapper}>
+            <label style={styles.label}>Select Course Name:</label>
             <select
-              style={{
-                width: '100%',
-                padding: '10px',
-                fontSize: '16px',
-                borderRadius: '4px',
-                border: '1px solid #ccc',
-                outline: 'none',
-              }}
+              style={styles.select}
               value={selectedCourse}
               onChange={handleCourseChange}
               disabled={!selectedType} // Disable if no course type is selected
@@ -84,6 +70,69 @@ const CourseSearch = () => {
       </div>
     </div>
   );
+};
+
+// Styles
+const styles = {
+  container: {
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    backgroundColor: '#f2f2f2',
+    padding: '20px',
+    borderRadius: '8px',
+    boxShadow: '0px 4px 8px rgba(0,0,0,0.1)',
+    width: '100%',
+    maxWidth: '1200px',
+    margin: '0 auto',
+  },
+  header: {
+    backgroundColor: '#007bff',
+    color: 'white',
+    padding: '30px',
+    textAlign: 'center',
+    borderRadius: '8px',
+    width: '100%',
+  },
+  headerTitle: {
+    margin: 0,
+    fontSize: '18px',
+  },
+  headerSubtitle: {
+    margin: 0,
+    fontSize: '24px',
+    color: '#ffd700',
+  },
+  form: {
+    flex: 1,
+    padding: '20px',
+    width: '100%',
+    marginTop: '20px',
+  },
+  selectContainer: {
+    display: 'flex',
+    flexDirection: 'row',  // Row on larger screens
+    gap: '20px',
+    flexWrap: 'wrap',      // Wrap on smaller screens
+  },
+  selectWrapper: {
+    flex: 1,
+    minWidth: '250px',      // Minimum width to prevent too small elements on small screens
+  },
+  label: {
+    display: 'block',
+    marginBottom: '5px',
+    fontSize: '16px',
+    fontWeight: 'bold',
+  },
+  select: {
+    width: '100%',
+    padding: '10px',
+    fontSize: '16px',
+    borderRadius: '4px',
+    border: '1px solid #ccc',
+    outline: 'none',
+  }
 };
 
 export default CourseSearch;
